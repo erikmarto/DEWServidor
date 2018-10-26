@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Contador Palabras</title>
-</head>
-<body>
-<form method="post" enctype="multipart/form-data" >
-<label>Suba el archivo:</label>
-    <input type="file" name="fichero">
-    <input type="submit" value="Enviar" name="enviar">
+    <head>
+        <title>Contador Palabras</title>
+    </head>
+    <body>
+        <h1>Contador de Palabras:</h1>
+        <form method="post" enctype="multipart/form-data" >
 
-<?php
-$file = 'pilares.txt';
-$text = file_get_contents($file);
-$values = preg_split('/[\s, " ", ".", ","]+/',  utf8_encode($text), -1, PREG_SPLIT_NO_EMPTY);
+        <label>Suba el archivo:</label>
+            <input type="file" name="file">
+            <input type="submit" value="Enviar" name="enviar">
+        <?php
+        $file = [];
+        if(isset($_FILES) && isset($_FILES['file'])){
 
-rsort($values);
-$frecuencia = [];
+            $rutaArchivo = $_FILES['file']['tmp_name'];
+            $nombreArchivo = $_FILES['file']['name'];
+            move_uploaded_file($rutaArchivo, 'textos/'.$nombreArchivo);
 
+            $textos = file_get_contents('textos/'.$nombreArchivo);
 
-foreach ($values as $palabra) {
+            $valores = preg_split('/[\s, " ", ".", ","]+/',  utf8_encode($textos), -1, PREG_SPLIT_NO_EMPTY);
 
-    if (isset($frecuencia[$palabra])) {
-        $frecuencia[$palabra]++;
-    }else {
-        $frecuencia[$palabra]=1;
-    }
-}
+            $frecuencia = [];
+            foreach ($valores  as $palabra) {
 
-//var_dump($frecuencia);
-
-?>
-<table border='1'><tr><th>Palabra</th><th>Numº Rep</th></tr>
-<?php
-
-foreach ($frecuencia as $values => $frecuencia) {
-        echo "<tr><td align=center>".$values."</td>";
-        echo "<td align=center>".$frecuencia."</td>";
-        echo "</tr>";
-}
-?>
-</table>
-</form>
-</body>
+                if (isset($frecuencia[$palabra])) {
+                    $frecuencia[$palabra]++;
+                }else {
+                    $frecuencia[$palabra]=1;
+                }
+            }
+            arsort($frecuencia);
+            ?>
+            <table border='1px'><tr><th>Palabras</th><th>Numº Repetidas</th></tr>
+            <?php
+            foreach ($frecuencia as $palabra  => $frecuencia) {
+                    echo "<tr><td align=center>".$palabra."</td>";
+                    echo "<td align=center>".$frecuencia."</td>";
+                    echo "</tr>";
+            }
+        }
+        ?>
+            </table>
+        </form>
+    </body>
 </html>
