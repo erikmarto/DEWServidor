@@ -19,7 +19,7 @@ if(isset($_SESSION['usuario'])){
 if(!$usuario){
     echo "No estas logueado. <a href='login.php'>Entrar </a>";
 }else {
-    echo "Usuario: ".$usuario['nombre'];
+    echo "Usuario: ".$usuario['usuario'];
     echo " <a href='logout.php'>Cerrar Sesión</a>";
 }
 
