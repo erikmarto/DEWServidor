@@ -1,0 +1,8 @@
+body{font-family:Verdana}
+.titulo {text-decoration: none}
+.error {color:red}
+.art{border:1px solid;float:left;width:200px;height:80px;padding:6px;margin:5px}
+fieldset{background:#ddddee}
+.boton  {background:#00a;color:white;padding:3px;margin:10px;text-decoration: none;font-size:0.9em}
+td {padding:3px;margin:3px;height:32px}
+
