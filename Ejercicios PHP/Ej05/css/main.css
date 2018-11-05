@@ -1,0 +1,33 @@
+.titulo {
+    width:80%;
+    float:left;
+}
+
+.error {
+    color:red;
+}
+
+.art{
+    border:1px solid;
+    float:left;
+    width:200px;
+    height:80px;
+    padding:6px;
+    margin:5px;
+}
+
+td {
+    padding:3px;
+    margin:3px;
+    height:32px
+}
+
+/*Cabecera*/
+.navbar {
+   border-radius: 0px !important;
+}
+.desplegable{
+    margin:auto;
+    width:600px;
+}
+
