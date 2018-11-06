@@ -3,22 +3,25 @@
 <body>
     
 <?php 
-    require "elementos/cabeceraPa.php";
+require "init.php";
+    
 //Analizo param. de entrada
 $cat=param("cat");
-if($cat && !isset($categorias[$cat])) 
+if($cat && !isset($categorias[$cat])){
     die("CATEGORIA INEXISTENTE!!");
-
+}
 $filtro=param("filtro");
+
+require "elementos/cabeceraPa.php";
 ?>
 
 <h1>Selector</h1>
 <form method="GET">
-Categoria:
+Categoria: 
 <?php
 desplegable('cat',$categorias,$cat);
 ?>
-Nombre:<input type="text" name="filtro" value="<?php echo $filtro; ?>">
+ Producto: <input type="text" name="filtro" value="<?php echo $filtro; ?>">
 <input type="submit" value="Buscar">
 </form>
 
@@ -30,14 +33,10 @@ if($cat || $filtro ) { // Si no se selecciona nada, no se muestran articulos
         }
         
 	foreach(getarticulos($cat,$filtro)  as  $id=>$art){
-
-		printf('<div class="art"><b>%s</b><br>%d €<br><br>
-			<a href="comprar.php?id=%s" class=boton>Añadir a carrito</a></div>',
+		printf('<div class="articulo"><b>%s</b><br>%d €<br><br>
+			<a class="btn btn-primary" href="comprar.php?id=%s">Añadir a carrito</a></div>',
 				$art['titulo'],$art['precio'],$id);
 	}
 }
-    require ("elementos/piePa.php");
+require "elementos/piePa.php";
 ?>
-
-</body>
-</html>

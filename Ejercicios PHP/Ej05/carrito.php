@@ -8,9 +8,9 @@ require "init.php";
 
 //Analizo param. de entrada
 $id=param("borrar");
-if($id) // 
+if($id) {
     borrarcarrito($id);
-
+}
 require ("elementos/cabeceraPa.php");
 if(!isset($_SESSION['carrito'])) {
 	echo "El carrito está vacío";
@@ -18,7 +18,7 @@ if(!isset($_SESSION['carrito'])) {
 }
 ?>
 <h3>Carrito</h3>
-<table border="1"><tr><th>Artículo</th><th>Descripción</th><th>Cantidad</th><th>Precio</th><th >Importe</th><th></th></tr>
+<table border="1"><tr><th>Artículo</th><th>Descripción</th><th>Cantidad</th><th>Precio</th><th>Importe</th><th></th></tr>
 <?php
 	$importe=0;
 
@@ -26,18 +26,14 @@ if(!isset($_SESSION['carrito'])) {
 
 		$articulo=getarticulo($id);
 		$importe=$cantidad*$articulo['precio'];
-		printf('<tr><td>%s</td><td>%s</td><td align="right">%d</td><td align="right">%d</td><td align="right">%d €</td>
-			<td><a class=boton href="carrito.php?borrar=%s">Borrar</a></tr>',
+		printf('<tr><td>%s</td><td>%s</td><td>%d</td><td>%d</td><td>%d €</td>
+			<td><a class="btn btn-danger" href="carrito.php?borrar=%s">Borrar</a></tr>',
 			$id,$articulo['titulo'],$cantidad,$articulo['precio'],$cantidad*$articulo['precio'],$id);
 
 	}
-	echo "<tr><td colspan=3></td><td>TOTAL</td><td align='right'>".$importe.' €</tr>';
+	echo "<tr><td colspan='4'></td><td>TOTAL</td><td align='right'>".$importe.' €</tr>';
 ?>
 </table>
 <p>
-<a class="boton" href="index.php">Seguir comprando</a>
-
-<a class="boton" href="#" onclick='alert("Función no implementada")'>Finaliza pedido</a>
-<?php
-require 'elementos/piePa.php';
-?>
+<a class="btn btn-primary" href="index.php">Seguir comprando</a>
+<a class="btn btn-success" href="https://www.paypal.com/es/home">Finaliza pedido</a>

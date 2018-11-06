@@ -9,10 +9,11 @@
  */
 function getarticulo($id){
     global $articulos;
-    if(!isset($articulos[$id]))
+    if(!isset($articulos[$id])){
         return false;
-    else
+    }else{
         return $articulos[$id];
+    }
 }
 
 /** Devuelve los articulos , filtrando por categoria y/o por nombre 
@@ -22,9 +23,9 @@ function getarticulo($id){
  */
 function getarticulos($cat='',$nombre=''){
     global $articulos;
-    if(!$cat && !$nombre)  //TOdos
+    if(!$cat && !$nombre) {//TOdos
         return $articulos;
-    else {
+    }else {
         $arts=[];
         foreach($articulos as $id=>$art){
             if($cat && $art['cat']!=$cat) continue;
@@ -41,10 +42,11 @@ function getarticulos($cat='',$nombre=''){
  * @param type $cantidad
  */
 function anadircarrito($id,$cantidad=1){
-	if(isset($_SESSION['carrito'][$id]))
+	if(isset($_SESSION['carrito'][$id])){
 		$_SESSION['carrito'][$id]+=$cantidad;
-	else
-		$_SESSION['carrito'][$id]=$cantidad;
+	}else{
+        $_SESSION['carrito'][$id]=$cantidad;
+    }
 }
 
 /** Borra un artículo del carrito
@@ -53,13 +55,10 @@ function anadircarrito($id,$cantidad=1){
  * @param type $cantidad
  */
 function borrarcarrito($id,$cantidad=1){
-	if(isset($_SESSION['carrito'][$id]))
-		unset($_SESSION['carrito'][$id]);
+	if(isset($_SESSION['carrito'][$id])){
+        unset($_SESSION['carrito'][$id]);
+    }
 }
-
-
-
-
 
 
 // Funciones generales. Utilizables en cualquier aplicación
@@ -69,10 +68,11 @@ function borrarcarrito($id,$cantidad=1){
 * Devuelve un parámetro de entrada por GET o POST
 */
 function param($p,$valdefecto=""){
-	if(isset($_REQUEST[$p]))
+	if(isset($_REQUEST[$p])){
 		return $_REQUEST[$p];
-	else
-		return $valdefecto;
+	}else {
+        return $valdefecto;
+    }
 }
 
 /** Crea un desplegable
@@ -87,11 +87,6 @@ function desplegable($name,$lista,$valorselecc){
 		$selected=$valor==$valorselecc ? "selected" :"";
 		echo "<option $selected value='$valor'>$descri</option>";
 	}
-
 	echo "</select>";
-
 }
-
-
-
 ?>
