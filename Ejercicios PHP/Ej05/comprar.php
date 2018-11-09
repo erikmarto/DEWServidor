@@ -29,11 +29,11 @@ if (isset($_POST['comprar'])) { //2º paso. Vengo del formulario
 ?>
 <h3>Comprar artículo</h2>
 <div class='compra'>
-    <form method='post'>
-        <b><?= $articulo['titulo'] ?></b>
+    <form method='post' style="margin-left: 20px;">
+        Producto:<b> <?= strtoupper($articulo['titulo']) ?></b>
         <br>Categoría: <?= $categorias[$articulo['cat']] ?>
-        <br>Precio: <?= $articulo['precio'] ?> €<br><p>
-            Cantidad: <input name="cantidad" size="2" value="1">
+        <br>Precio: <?= $articulo['precio'] ?> € 
+        <br> Cantidad: <input name="cantidad" size="2" value="1"><br> 
             <?php if($error) echo "<div class='error'>$error</div>";?>
             <br><input type='submit' class='btn btn-primary' name='comprar' value="Añadir a carrito">
     </form>
