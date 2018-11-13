@@ -4,7 +4,7 @@ $categorias=[
     "TV"=>"Televisores",
     "TE"=>"Telefonia",
     "OR"=>"Ordenadores",
-    "LB"=>"Linea blanca"
+    "LB"=>"Linea blanca",
 ];
 
 $articulos=[
@@ -16,6 +16,6 @@ $articulos=[
     "te2"=>["id"=>"te2", "titulo"=>"a6", "precio"=>800, "cat"=>"TE"],
     "or0"=>["id"=>"or0", "titulo"=>"gaming", "precio"=>980, "cat"=>"OR"],
     "or1"=>["id"=>"or0", "titulo"=>"pro", "precio"=>750, "cat"=>"OR"],
-    "or2"=>["id"=>"or0", "titulo"=>"nvidia", "precio"=>1200, "cat"=>"OR"]
+    "or2"=>["id"=>"or0", "titulo"=>"nvidia", "precio"=>1200, "cat"=>"OR"],
 ];
 ?>
