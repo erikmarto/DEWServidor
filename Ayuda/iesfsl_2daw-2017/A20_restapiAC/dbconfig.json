@@ -1,0 +1,17 @@
+{
+    "development":{
+        "host"     : "reminet.iesfsl.org",
+        "user"     : "2daw",
+        "password" : "iesfsl",
+        "database" : "test_ies",
+        "charset"  : "utf8_spanish_ci"
+        },
+ 
+    "production":{
+        "host"     : "reminet.iesfsl.org",
+        "user"     : "2daw",
+        "password" : "iesfsl",
+        "database" : "test_ies",
+        "charset"  : "utf8_spanish_ci"
+    }
+}

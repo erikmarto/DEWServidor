@@ -1,0 +1,12 @@
+CRUD de una tabla (Create, Retrieve, Update, Delete)
+
+En este ejemplo 
+
+-Separamos totalmente la vista de la lógica de negocio. Las acciones (index,alta,borra,modifica) llaman a la vista correspondiente
+-Introducimos el layout: Vista que determina la estructura de la página
+y que contiene a la vista que queremos representar
+-Utilizamos una clase (usuario) cuyas instancias se corresponderán con cada fila de la tabla en cuestión
+-Utilizamos la librería mysqli para acceder a base de datos
+
+
+

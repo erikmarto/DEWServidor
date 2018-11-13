@@ -1,0 +1,16 @@
+{
+  "name": "a15_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fecha.js",
+  "dependencies": {
+    "nodemon": "^1.14.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

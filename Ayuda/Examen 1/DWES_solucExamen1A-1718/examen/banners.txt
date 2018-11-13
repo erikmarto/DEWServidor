@@ -1,0 +1,3 @@
+http://www.zara.com, ZARA
+http://www.ebay.com, EBAY
+http://www.cocacola.com, COCA COLA
