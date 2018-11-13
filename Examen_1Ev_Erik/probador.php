@@ -38,7 +38,7 @@ switch ($art) {
         $_SESSION['probador'][$pren]=0;
         break;
     case 'v'://Vacia todos los probadores
-		for ($j=1;$j<=$numprobadores;$j++){
+		for ($j=1;$j<=$numprobadores;$j++) {
             $_SESSION['probador'][$j]=0;
         }
 }

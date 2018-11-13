@@ -53,8 +53,7 @@
         ?>
         <table border="1"><tr class="titulo"><th>Probador</th><th>Prendas</th><th>Hora</th></tr>
 
-        <?php
-        foreach($_SESSION['probador'] as $pren=>$prendas): ?>
+        <?php foreach($_SESSION['probador'] as $pren=>$prendas): ?>
             <tr><td class="probador">Probador <?=$pren?></td><td class="prendas"><?=$prendas?> </td>
             <td>
             <?php 
