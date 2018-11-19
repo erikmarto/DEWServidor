@@ -8,4 +8,6 @@ require 'mastermind.class.php';
 //Inicializamos datos
 $masterM = new MasterMind;
 
+$masterM->prueba();
+
 require 'vistas/pie.php';

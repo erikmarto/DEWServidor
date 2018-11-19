@@ -6,6 +6,11 @@
     </head>
 
     <body>
-
+    Introduce los numeros:
+        <input type='number' class=''/>
+        <input type='number' class=''/>
+        <input type='number' class=''/>
+        <input type='number' class=''/>
+        <button type='button' class=''>Comprobar</button>
     </body>
 </html>
