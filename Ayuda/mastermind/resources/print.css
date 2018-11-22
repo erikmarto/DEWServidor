@@ -1,0 +1,11 @@
+
+
+
+/* visible border and margin because mark images have no gray background */
+img.mark {
+	border:1px solid #999;
+	margin-right:2px;
+	}
+
+
+

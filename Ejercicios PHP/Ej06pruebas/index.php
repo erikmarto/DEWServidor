@@ -8,6 +8,8 @@ $masterM = new MasterMind;
 
 $numRandom = $masterM->inicio();
 
+var_dump($numRandom);
+
 if(!isset($_SESSION['numRandom'])){
     $numRandom = $_SESSION['numRandom'];
 }
@@ -18,5 +20,7 @@ if(isset($num)){
     var_dump($num);
     $masterM->comprobar($num, $_SESSION['numRandom'], 0);
 }
+
 require 'vistas/pie.php';
 ?>
+
