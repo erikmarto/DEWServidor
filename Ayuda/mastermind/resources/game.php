@@ -1,14 +1,8 @@
 <?php
 
-
-
-
-
 //check for victory by counting blacks
 $blackScore = 0;
 	
-
-
 
 //score attempt function
 function scoreThisAttempt()
@@ -57,7 +51,7 @@ function scoreThisAttempt()
 	//otherwise if number is valid input 
 	//and it's either the first round, or not the same as the previous input
 	//this protects against repeat input due to pressing refresh .. as well as stupidity :)
-	else if(ereg('^[0-' . $_SESSION['difficulty'] . ']{4}$',$attempt) && ($round == 1 || $attempt != $_SESSION['attempts'][($round-1)]))
+	else if(preg_match('^[0-' . $_SESSION['difficulty'] . ']{4}$',$attempt) && ($round == 1 || $attempt != $_SESSION['attempts'][($round-1)]))
 	{
 		//add this attempt to array
 		$_SESSION['attempts'][$round] = $attempt;
@@ -142,7 +136,7 @@ function scoreThisAttempt()
 		if(!isset($_GET['count']))
 		{
 			//if input was not a valid number
-			if(!ereg('^[0-' . $_SESSION['difficulty'] . ']{4}$',$attempt))
+			if(!preg_match('^[0-' . $_SESSION['difficulty'] . ']{4}$',$attempt))
 			{
 				//invalid input message
 				addMessage('That was not a valid attempt - please enter four digits between 0 and ' . $_SESSION['difficulty'] . '.');
