@@ -16,3 +16,11 @@
         </nav>
         <div class="container">
             <!--<div class='alert alert-success'>Usuario dado de alta.</div>-->
+            <form method="POST">
+                Introduce los numeros:
+                <input type='number' class='input' name='numero'/>
+                <button type="submit" class="btn btn-primary" name="comprobar">Comprobar</button>
+            </form>
+        </div>
+    </body>
+</html>
