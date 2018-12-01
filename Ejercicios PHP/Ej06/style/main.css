@@ -1,0 +1,45 @@
+body {
+    text-align: center;
+}
+
+.container {
+    background-color: ghostwhite;
+    margin-top: 50px;
+    width: 50%;
+    padding: 10px;
+}
+
+.navbar{
+    color: white !important;
+    font-size: 30px;
+}
+
+.rondas {
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+}
+
+.cubo {
+    width: 10px;
+    height: 10px;
+    border: 1px solid grey; 
+    display: inline-block;
+}
+
+.muerto {
+    background-color: black;
+}
+
+.herido {
+    background-color: white;
+}
+
+.cabecera {
+    font-weight: 800;
+}
+
+.errores{
+    color: red;
+}
+
