@@ -1,5 +1,5 @@
 <html>
-<heaer>
+<header>
 	<meta charset='utf-8'>
 	<TITLE><?php echo app::instance()->title ?></title>
 	<link rel="stylesheet"   type="text/css" href="views/estilo.css">
