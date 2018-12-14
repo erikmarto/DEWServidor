@@ -1,0 +1,17 @@
+@import url('https://use.fontawesome.com/releases/v5.5.0/css/all.css');
+@import url('layout.css');
+@import url('blog.css');
+@import url('config.css');
+@import url('user.css');
+@import url('admin.css');
+
+@media screen and (max-width: 992px) {
+    .no-phone {
+        display: none;
+    }
+}
+
+
+
+
+
