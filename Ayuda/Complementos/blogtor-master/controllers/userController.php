@@ -4,21 +4,7 @@ class userController extends controller {
 
     public $title = "User";
 
-    public function actionConfig() {
-        $usuario = usuarios::findByPk(app::instance()->getuser()->id); //'id > MAX(id)-10
 
-        if (isset($_POST['action'])) {
-            switch ($_POST['action']) {
-                case 'update-picture':
-                    $pic = $_FILES['picture'] ?? false;
-                    if ($pic) {
-                        var_dump($pic);
-                    }
-                break;
-            }
-        }
-        $this->render('user/userconfig', ['usuario' => $usuario]);
-    }
 
     public function actionInbox() {
         $usuario = app::instance()->getuser();

@@ -55,7 +55,7 @@
         </a>
         <div class="dropdown-menu bg-green dropdown-menu-right" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="?r=user/inbox">Bandeja entrada</a>
-            <a class="dropdown-item" href="?r=user/config">Configuración</a>
+            <a class="dropdown-item" href="?r=config/index">Configuración</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="?r=user/logout">Sign out</a>
         </div>

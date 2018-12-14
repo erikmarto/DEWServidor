@@ -4,6 +4,7 @@
 @import url('config.css');
 @import url('user.css');
 @import url('admin.css');
+@import url('comentario.css');
 
 @media screen and (max-width: 992px) {
     .no-phone {

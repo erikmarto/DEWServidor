@@ -6,7 +6,7 @@
     <hr class="header-separator">
 
     <!-- Editor foto perfil https://codepen.io/siremilomir/pen/jBbQGo -->
-    <form id="config-pic-change" method="post" enctype="multipart/form-data" action="?r=user/config">
+    <form id="config-pic-change" method="post" enctype="multipart/form-data" action="?r=config/Updatepic">
         <div class="container text-center">
             <h4 class="config-header">Actualice su foto de perfil</h4>
             <div class="avatar-upload">

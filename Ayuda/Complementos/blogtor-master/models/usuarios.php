@@ -29,9 +29,6 @@ class usuarios extends model {
         if(!$this->usuario) {
             $this->addError('usuario', 'Introduzca un nombre de usuario.');
         } 
-        elseif (strlen($this->usuario) < 5) {
-            $this->addError('usuario', 'El nombre de usuario debe contener al menos 5 caracteres.');
-        }
 
         //valdiacion email
         if (!$this->email) {

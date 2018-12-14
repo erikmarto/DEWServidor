@@ -26,7 +26,7 @@
                     ?>
                     <h3><a href='?r=blog/entrada&id=<?=$entrada->id?>'><?=$entrada->titulo?></a></h3>
                     <h6 class='text-secondary d-inline-block'><?=$entrada->descripcion_categoria?></h6>
-                    <p class="d-inline-block"><small><?=$entrada->fecha_hora?></small></p>
+                    <p class="d-inline-block float-right"><small><?=$entrada->fecha_hora?></small></p>
                 </div>
                 <div class='entrada-texto clearfix'>
                     
@@ -36,18 +36,31 @@
                 <?php
                 if (count($comentarios[$entrada->id]) || app::instance()->isLogged()) {
                 ?>
-                    <div class="comentarios">
+                    <div class="comments-container">
                         <?php
-                        if (app::instance()->isLogged()) {
-                            require 'views/blog/subviews/create_comment.php';
-                        }
                         foreach($comentarios[$entrada->id] as $comentario) {
                         ?>
-                            <div class="comentario">
-                                <p>Por: <?=$comentario->nombre?></p>
-                                <p><?=$comentario->texto?></p>
-                            </div>
+                            <ul id="comments-list" class="comments-list">
+                                <li>
+                                    <div class="comment-main-level">
+                                        <!-- Avatar -->
+                                        <div class="comment-avatar"><img src="images/profile-pictures/default-profile-pic.png" alt=""></div>
+                                        <!-- Contenedor del Comentario -->
+                                        <div class="comment-box">
+                                            <div class="comment-head">
+                                                <h6 class="comment-name by-author">
+                                                    <?=$comentario->nombre?>
+                                                </h6>
+                                            </div>
+                                            <div class="comment-content"><?=$comentario->texto?></div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
                         <?php
+                        }
+                        if (app::instance()->isLogged()) {
+                            require 'views/blog/subviews/create_comment.php';
                         }
                         ?>
                     </div>

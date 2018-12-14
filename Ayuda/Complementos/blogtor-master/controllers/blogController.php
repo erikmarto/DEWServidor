@@ -12,7 +12,7 @@ class blogController extends controller {
             $usuario = app::instance()->getuser();
             $entradas = entradas_cat_usuario::findAll("usuarios_id != $usuario->id AND aceptado = 1", "fecha_hora DESC LIMIT $step, 20");
         } else {
-            $entradas = entradas_cat_usuario::findAll('', "fecha_hora DESC LIMIT $step, 10");
+            $entradas = entradas_cat_usuario::findAll('aceptado = 1', "fecha_hora DESC LIMIT $step, 10");
         }
 
         $comentarios = [];
