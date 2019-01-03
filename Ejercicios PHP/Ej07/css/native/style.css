@@ -1,0 +1,38 @@
+@import url('https://use.fontawesome.com/releases/v5.5.0/css/all.css');
+@import url('layout.css');
+@import url('blog.css');
+@import url('config.css');
+@import url('user.css');
+@import url('admin.css');
+@import url('comentario.css');
+@import url('searchbar.css');
+
+@media screen and (max-width: 991px) {
+    .no-phone {
+        display: none;
+    }
+
+    .user-stuff {
+        align-items: flex-start;
+    }
+    .mini-btn {
+        background-color: transparent;
+        border-color: transparent;
+        color: rgba(0,0,0,.5);
+        padding: 0;
+    }
+    .mini-btn:hover {
+        background-color: transparent;
+        border-color: transparent;
+        color: rgba(0,0,0,.7);
+    }
+
+    #create-entrada {
+        margin-left: 0;
+    }
+}
+
+
+
+
+

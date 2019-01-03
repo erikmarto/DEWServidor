@@ -1,0 +1,98 @@
+
+/**VISTAS ENTRADAS**/
+
+.comentarios {
+    background-color: rgba(216, 243, 252, 0.952);
+}
+
+.comentario {
+    border-top: 1px solid rgba(0,0,0,.1);
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.send-comentario > textarea {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: -1rem;
+}
+
+.send-comentario > button {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.card.list-item {
+    margin-bottom: 1rem;
+}
+
+.entrada-card {
+    padding: 0;
+}
+
+.entrada-card > * {
+    padding: 0 1.25rem 0 1.25rem;
+}
+
+.entrada-card > *:first-child {
+    padding-top: 1.25rem;
+}
+
+.entrada-card > *:last-child {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+}
+
+.entrada-texto {
+    border-top: 1px solid rgba(0,0,0,.1);
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    padding: 2rem 1.25rem 1rem 1.25rem;
+}
+
+.form-group button {
+    margin-top: 1em;
+}
+
+.entrada-header {
+    margin-bottom: 0;
+    padding-bottom: 1vh;
+    background-color: rgba(216, 243, 252, 0.952);
+}
+
+.entrada-separator {
+    margin-top: 0;
+}
+
+
+/**VISTAS BLOG **/
+
+.blog-title {
+
+    margin-bottom:4rem;
+}
+
+.user-entry-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.entry-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border: 2px solid #F8F8F8;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .entry-avatar > div {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .entry-username {
+    padding-left: 0.5rem;
+  }
