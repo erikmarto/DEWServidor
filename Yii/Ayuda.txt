@@ -1,0 +1,1 @@
+http://localhost/Yii/basic/web/index.php/?r=gii (PARA GENERAR CONTROLADORES)
