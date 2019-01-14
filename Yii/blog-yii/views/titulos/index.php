@@ -14,21 +14,24 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php Pjax::begin(); ?>
-    <!--
+
     <?php echo $this->render('_search', ['model' => $searchModel]); ?>
     <p>
         <?= Html::a(Yii::t('app', 'Create Titulos'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-    -->
 
+    
     <?= ListView::widget([
         'dataProvider' => $dataProvider,
         'options' => ['class' => 'list-view'],
         'itemOptions' => ['class' => 'item titulo-container'],
-        'layout' => "{summary}\n{pager}\n<div class='titulos-container'>{items}</div>\n{pager}",
-        'itemView' => function ($model, $key, $index, $widget) {
-            return $this->render('_view', ['model' => $model]);
-        },
+        'layout' => 
+            "{summary}\n{pager}\n
+                <div class='titulos-container'>
+                    {items}
+                </div>
+            \n{pager}",
+        'itemView' => '_view',
     ]) ?>
     <?php Pjax::end(); ?>
 </div>

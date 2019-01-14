@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
+use app\components\THtml;
 /* @var $this yii\web\View */
 /* @var $model app\models\Titulos */
 /* @var $form yii\widgets\ActiveForm */
@@ -14,7 +14,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'titulo')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'autor_id')->textInput() ?>
+    <?=THtml::autocomplete($model,'autor_id',['/autores/lookup'], 'autor') ?>
 
     <?= $form->field($model, 'categoria_id')->textInput() ?>
 
@@ -28,7 +28,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'usuarios_id')->textInput() ?>
 
-    <?= $form->field($model, 'fecha')->textInput() ?>
+    <?= $form->field($model, 'fecha')->widget(yii\jui\DatePicker::className(), 
+        ['language' => 'es',
+         'dateFormat' => 'dd/MM/yyyy',
+         'options' => ['class' => 'form-control']]) ?>
 
     <?= $form->field($model, 'descargas')->textInput() ?>
 
