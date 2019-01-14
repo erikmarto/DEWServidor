@@ -13,7 +13,7 @@
 
 <?php 
 foreach($_SESSION['probador'] as $probador=>$datos) {
-    $prendas=$datos['prendas'];-+
+    $prendas=$datos['prendas'];
 ?>
 		<div class=probador>
             Probador <?= $probador ?>

@@ -1,4 +1,4 @@
-if (!count($errores)) { //Registro correcto ?>
+
         <html>
         <head>
             <meta charset="utf-8" />
@@ -9,7 +9,5 @@ if (!count($errores)) { //Registro correcto ?>
             <h2>Registro de Usuario</h2>
             <div class='alert alert-success'>Usuario dado de alta. Recibirás un correo de confirmación</div>
             </div>
-        </body></html>
-    <?php
-        die;
-    }
+        </body>
+        </html>
