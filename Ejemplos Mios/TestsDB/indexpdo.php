@@ -6,7 +6,7 @@
         $db = new PDO("mysql:host=localhost;dbname=test_db;charset=utf8", 'root', 'root');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } catch(PDOException $e) {
-        die "Error al conectar: ".$e->getMessage();
+        /* die "Error al conectar: ".$e->getMessage(); */
     }
 
     $sql = "SELECT * nombre, upper(apellidos) as apellidos FROM usuarios";
