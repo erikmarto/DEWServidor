@@ -1,85 +1,59 @@
-<!DOCTYPE html>
-<html>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Blogtor<?=$this->title?></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <!-- JQuery -->
-    <script
-        src="https://code.jquery.com/jquery-3.3.1.js"
-        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-        crossorigin="anonymous">
-    </script>
-    <!-- Font awesome css -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link href='https://cdn.jsdelivr.net/npm/froala-editor@2.9.1/css/froala_editor.min.css' rel='stylesheet' type='text/css' />
-    <link href='https://cdn.jsdelivr.net/npm/froala-editor@2.9.1/css/froala_style.min.css' rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="css/plugins/colors.min.css">
-    <link rel="stylesheet" href="css/plugins/fullscreen.min.css">
-    <link rel="stylesheet" href="css/plugins/table.min.css">
-    <link rel="stylesheet" href="css/plugins/emoticons.min.css">
-    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
-    <!-- Custom -->
-    <link rel="stylesheet" type="text/css" media="screen" href="css/native/style.css"/>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/mainEstilo.css">
+    <link rel="stylesheet" type="text/css" href="css/estiloComentarios.css">
 </head>
-
-
-
 <body>
-    <!-- navigation -->
-    <header class="navbar fixed-top navbar-expand-lg navbar-light bg-green">
-        
-        <a class="navbar-brand" href="index.php?r=blog">
-        <?=app::instance()->name?><small class="text-muted"><?=$this->title?></small></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            
-                <!--
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                    </a>
-                    <div class="dropdown-menu bg-green" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-                -->
-            <!-- login / user menu -->
-            <?php
-                //mostrar login o usuario según esté logueado o no
-                if(app::instance()->isLogged()){
-                    require "views/layout-components/logged-user.php";
-                } else {
-                    require "views/layout-components/no-user.php";
-                }
-                
-            ?>
-        </div>
-    </header>
-
-
-
-
-    <!-- CONTENT -->
-    <div class="container-fluid layout-content">
-        <div class="row flex-xl-nowrap">
-            <?=$content?>
-        </div>
+    <div id="header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="."><h2 id="titulo">Primer-Blog</h2></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <?php
+                        //mostrar boton 'MiBlog y Añadir Entrada' según esté logueado o no
+                        if(app::instance()->isLogued()){ ?>
+                            <li class="nav-item">
+                                <?php echo Mhtml::actionlink('Entrada/index',"Añadir Entrada", [], "button"); ?>
+                            </li>&emsp;
+                            <li class="nav-item">
+                                <?php echo Mhtml::actionlink('usuarios/index',"Configuración", [], "button"); ?>
+                            </li>
+                    <?php }?>  
+                </ul>
+                <!-- login / user menu -->
+                <?php
+                    //mostrar login o usuario según esté logueado o no
+                    if(app::instance()->isLogued()){
+                        require "usuarios/logged-user.php";
+                        echo "<a id='logOut' href='?r=usuarios/logout'>(Salir)</a>";
+                    } else {
+                        echo Mhtml::actionlink('usuarios/signup',"Registrarse");
+                        echo '&emsp;&ensp;';
+                        echo '<span id="btnLogin">';
+                        echo Mhtml::actionlink('usuarios/login',"Login");
+                        echo '</span>';
+                    }
+                ?>
+            </div>
+        </nav>
     </div>
 
-
-</body>
-</html>
+    
+    <!-- CONTENT -->
+    <div id="main-content" class="col-12 offset-md-1 col-md-10 offset-xl-2 col-xl-8 bg-blue contentBlog">
+        <!--<h1><?=$this->title?></h1>-->
+        <?=$content?>
+    </div>

@@ -61,7 +61,7 @@ class controller {
 	function redirect($action,$params=array()){
 		$url="?r=$action";
 		foreach($params as $p=>$v){
-			$url.='&'.$p.'='.$v; //modified by me ($url used to be $xparams)
+			$url.='&'.$p.'='.$v;
 		}
 		header('Location:'.$url);
 

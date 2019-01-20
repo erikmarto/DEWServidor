@@ -217,7 +217,7 @@ abstract class model {
 			}
 		}
 
-		return !isset($this->errors); //devuelve error
+		return !isset($this->errors);
 	}
 
 	/** Salva el modelo en BD.Insert si es nuevo,  update si no lo es
@@ -229,14 +229,15 @@ abstract class model {
 		if(!$this->validate())
 			return false;
 		else {
+
 			if($this->isNewRecord)
 				$ret= $this->insert();
 			else
 				$ret= $this->update();
-			if(!$ret){ //Ha habido error de BD
-				$this->errors[self::$pkey]='Error de Base de Datos';
-			}
-			return $ret;
+                        if(!$ret){ //Ha habido error de BD
+                            $this->errors[self::$pkey]='Error de Base de Datos';
+                        }
+                        return $ret;
 		}
 	}
 	/**

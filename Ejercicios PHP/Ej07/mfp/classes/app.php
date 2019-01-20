@@ -129,7 +129,7 @@ class app {
      *
      * @return type
      */
-    public function isLogged() {
+    public function isLogued() {
         return isset($_SESSION['login']);
     }
 

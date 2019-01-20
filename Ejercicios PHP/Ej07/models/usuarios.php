@@ -2,13 +2,21 @@
 
 class usuarios extends model {
     static $tablename="usuarios";
-    static $attributes;
+	static $attributes;
+	public $role; // permisos
+	
+    public function __tostring(){
+		return $this->nombre;
+	}
 
-    function isAdmin() {
-        return $this->role;
-    }
-    
-    function validatePassword($pw2) {
+	public function getisadmin(){
+		if($this->role=='AD')
+			return true;
+		else
+			return false;
+	}
+
+	function validatePassword($pw2) {
         if (!$pw2) {
             $this->addError('password', 'Debe introducir ambas contraseñas');
         } elseif (strlen($this->password) < 6 || strlen($this->password) > 31) {
@@ -49,5 +57,6 @@ class usuarios extends model {
         }
         return parent::save();
     }
-}
+
+} 
 ?>
