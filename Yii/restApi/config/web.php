@@ -22,7 +22,7 @@ $config = [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\models\User',
+            'identityClass' => 'app\models\Usuarios',
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
@@ -51,14 +51,14 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 ['class'=>'yii\rest\UrlRule',
-                'pluralize'=>false,
-                'controller'=>['grupos','actividades']
+                    'pluralize'=>false,
+                    'controller'=>['grupos','actividades','usuarios']
                 ],
                 ['class' => 'yii\rest\UrlRule',
-                'controller' => ['user'],
-                'pluralize'=>false,
-                'extraPatterns'=>['POST authenticate'=>'authenticate',
-                'OPTIONS authenticate'=>'authenticate']
+                    'controller' => ['user'],
+                    'pluralize'=>false,
+                    'extraPatterns'=>['POST authenticate'=>'authenticate',
+                        'OPTIONS authenticate'=>'authenticate']
                 ],
             ],
         ],   

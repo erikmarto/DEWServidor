@@ -1,5 +1,4 @@
 <?php
-use yii\filters\auth\HttpBearerAuth;
 namespace app\models;
 
 class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
@@ -39,15 +38,8 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
     /**
      * {@inheritdoc}
      */
-    public static function findIdentityByAccessToken($token, $type = null)
-    {
-        foreach (self::$users as $user) {
-            if ($user['accessToken'] === $token) {
-                return new static($user);
-            }
-        }
-
-        return null;
+    public static function findIdentityByAccessToken($token, $type = null) {
+        return self::findOne(['token' => $token]);
     }
 
     /**
@@ -101,12 +93,4 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
     {
         return $this->password === $password;
     }
-
-    public function behaviors() {
-        $behaviors = parent::behaviors();
-        $behaviors['authenticator'] = [
-           'class' => HttpBearerAuth::className(),
-           'except' => ['options', 'authenticate'],
-        ];
- }
 }
