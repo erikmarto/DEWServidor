@@ -1,0 +1,17 @@
+{
+    "development":{
+        "host"     : "www.iesfsl.org",
+        "user"     : "2daw",
+        "password" : "iesfsl",
+        "database" : "test_academia",
+        "charset"  : "utf8_spanish_ci"
+        },
+ 
+    "production":{
+        "host"     : "www.iesfsl.org",
+        "user"     : "2daw",
+        "password" : "iesfsl",
+        "database" : "test_academia",
+        "charset"  : "utf8_spanish_ci"
+    }
+}

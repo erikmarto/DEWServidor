@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1= title
+  
+    table.table
+        thead.thead-dark
+            tr
+                th.col ID de la clase
+                th.col Fecha de la clase
+                th.col Hora inicio
+                th.col Hora fin
+                th.col Sala
+                th.col Grupo
+        each clase in clases
+            tbody
+                tr
+                    td #{clase.id}
+                    td #{clase.fecha}
+                    td #{clase.hora1}
+                    td #{clase.hora2}
+                    td #{clase.salas_id}
+                    td #{clase.grupos_id}
