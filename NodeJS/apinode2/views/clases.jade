@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= Clases
+  ul 
+    each clase, index in clases
+      li
+        div.clase 
+          p.nombre_sala Sala #{clase['nombre_sala']}
+          p.nombre_grupo Grupo #{clase['nombre_grupo']}
+          p.hora De #{clase['hora1'] || 'null'} a #{clase['hora2']} el #{clase['fecha']}
+          a(href="/clases/"+clase['id']) Entrar a la clase
+          

@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1= clase['nombre_sala']
+  div
+    p.nombre_grupo Grupo #{clase['nombre_grupo']}
+    p.hora De #{clase['hora1'] || 'null'} a #{clase['hora2']} el #{clase['fecha']}
+    a(href="/clases") Volver

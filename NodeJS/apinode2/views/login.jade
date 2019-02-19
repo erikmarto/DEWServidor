@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= "Login"
+  div
+    form(method="POST" action="/login")
+      div.form-group
+        label(for="username") Username:
+        input#username.form-control(type="text", placeholder="Nombre de usuario", name="usuario")
+      div.form-group
+        label(for="password") Contraseña:
+        input#password.form-control(type="password", placeholder="Contraseña", name="password")
+      button.btn.btn-primary(type='submit') Sign in
+      a(href="/") Volver
