@@ -1,7 +1,7 @@
 <?php
 require 'funciones.inc.php';
 
-$db=new PDO('mysql:dbname=test_vuelos','test','');
+$db=new PDO('mysql:dbname=test_vuelos','','');
 
 //$db=new PDO('mysql:dbname=test_vuelos','test','test');
 

@@ -8,10 +8,7 @@ router.get('/', function(req, res, next) {
     if(error!==null)
       res.send(error);
     else{
-        //var clases = result;
         res.render('clases', {clases: result});
-        //res.send(result);  
-        //
     }
           
     

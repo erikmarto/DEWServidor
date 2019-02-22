@@ -7,13 +7,14 @@ var checkAuth= require('../lib/checkAuth');
 
 /* GET clases listing. */
 router.get('/', /* checkAuth, */ function(req, res, next) {
+
   db.query('select clases.id, fecha, clases.hora1, clases.hora2, salas.nombre as nombre_sala, grupos.nombre as nombre_grupo ' +
       'FROM clases INNER JOIN grupos ON grupos.id = clases.grupos_id INNER JOIN salas ON salas.id = clases.salas_id ', (err, resul, fields) => {
     if (err) res.render('error', { message: 'whoops', error: err });
 
     res.json(resul);
     //res.render('clases', { clases : resul });
-  });
+  }); 
   
 });
 
@@ -34,7 +35,9 @@ router.put('/:id', checkAuth, function(req, res, next) {
   var usuarios_id; req.user.id;
   var atender = req.body.confirmado; // S/N/Q
 
-  //modificar tabla asistentes clases_id = 
+  //modificar tabla asistentes
+
+  //devolver nueva tabla
 }); 
 
 module.exports = router;
