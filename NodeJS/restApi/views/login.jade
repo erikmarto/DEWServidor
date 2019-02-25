@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= "Logueate"
+  hr
+  div
+    form(method="POST" action="/auth")
+      div.form-group
+        label(for="username") Usuario:
+        input#username.form-control(type="text", placeholder="Usuario", name="usuario")
+      div.form-group
+        label(for="password") Contraseña:
+        input#password.form-control(type="password", placeholder="Contraseña", name="password")
+      br
+      button.btn.btn-primary(type='submit') Entrar
+      button.btn.btn-warning
+        a(href="/") Volver
