@@ -4,5 +4,7 @@ block content
   h1= clase['nombre_sala']
   div
     p.nombre_grupo Grupo #{clase['nombre_grupo']}
+    p.nombre_sala #{clase['nombre_sala']}
     p.hora De #{clase['hora1'] || 'null'} a #{clase['hora2']} el #{clase['fecha']}
+    p.confirmado #{clase['confirmado'] == 'S'? 'Asistiré' : clase['confirmado'] == 'N' ? 'No asistiré' : 'No sé si asistiré'}
     a(href="/clases") Volver
